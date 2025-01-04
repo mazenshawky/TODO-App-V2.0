@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app_v2/config/routes/app_router.dart';
 import 'package:todo_app_v2/core/utils/app_fonts.dart';
-import 'package:todo_app_v2/modules/tasks/presentation/screens/tasks_screen.dart';
 
 class ToDoApp extends StatelessWidget {
   const ToDoApp({super.key});
@@ -9,12 +9,12 @@ class ToDoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ToDo App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         fontFamily: FontConstants.poppinsFontFamily,
         useMaterial3: true,
       ),
-      home: const TasksScreen(),
+      onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
 }
